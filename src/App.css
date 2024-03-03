@@ -16,10 +16,14 @@ h1 {
   color: #fff;
   padding: 8px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .form {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .userList {
