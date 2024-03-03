@@ -4,7 +4,7 @@ import { TextField, Button, Stack } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useState } from "react";
 import User from "./components/User";
-import DeleteIcon from '@mui/icons-material/Delete';
+// import DeleteIcon from '@mui/icons-material/Delete';
 
 
 function App() {
@@ -22,11 +22,11 @@ function App() {
     }
   }
 
-  const deleteUser = (index) => {
-    let tempArr = userList
-    tempArr.splice(index, 1);
-    setUserList([...tempArr])
-  }
+  // const deleteUser = (index) => {
+  //   let tempArr = userList
+  //   tempArr.splice(index, 1);
+  //   setUserList([...tempArr])
+  // }
 
   return (
     <div className="App">
@@ -60,13 +60,15 @@ function App() {
           userList.map((e, index) => {
             return (
               <>
-                {/* <User
-                key={index}
-                name={e.name}
-                email={e.email}
-                index={index}
-              /> */}
-                <div className="user" key={index}>
+                <User
+                  key={index}
+                  name={e.name}
+                  email={e.email}
+                  index={index}
+                  userList={userList}
+                  setUserList={setUserList}
+                />
+                {/* <div className="user" key={index}>
                   <h4>{e.name}</h4>
                   <h4>{e.email}</h4>
                   <Button
@@ -75,7 +77,7 @@ function App() {
                     color="error">
                     <DeleteIcon />
                   </Button>
-                </div>
+                </div> */}
               </>
             )
           })
